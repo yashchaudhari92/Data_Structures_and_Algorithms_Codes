@@ -41,7 +41,7 @@
 // ```
 
 
-// Code :- 
+// Code using DP :- 
 
 #include<iostream>
 #include<vector>
@@ -68,6 +68,43 @@ int main(){
     cin>>m>>n;
 
     cout<<uniquePaths(m, n)<<endl;
+
+    return 0;
+}
+
+
+// Code using Recursion :- 
+
+
+#include <iostream>
+using namespace std;
+
+int countPaths(int row, int col, int m, int n) {
+
+    // Base case: reached destination
+    if (row == m - 1 && col == n - 1) {
+        return 1;
+    }
+
+    // Base case: outside the grid
+    if (row >= m || col >= n) {
+        return 0;
+    }
+
+    // Move down
+    int down = countPaths(row + 1, col, m, n);
+
+    // Move right
+    int right = countPaths(row, col + 1, m, n);
+
+    return down + right;
+}
+
+int main() {
+    int m, n;
+    cin >> m >> n;
+
+    cout << countPaths(0, 0, m, n) << '\n';
 
     return 0;
 }
