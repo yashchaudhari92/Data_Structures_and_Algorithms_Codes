@@ -61,6 +61,7 @@ int main(){
     // Step 2: Find the score of every possible group
     vector<vector<int>> cost(N, vector<int>(N, 0));
 
+    // Remember: l and r are used to find the score of every possible contiguous group.
     for(int l=0; l<N; l++){
         vector<int> freq(100001, 0);
         int maxFreq = 0;
