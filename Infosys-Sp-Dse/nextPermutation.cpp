@@ -142,12 +142,15 @@ class Solution{
             }
 
             // Find next smaller element from suffix and it should be greater than pivot
-            for(int i = n-1; i>=index; i--){
-                if(nums[i] > nums[index]){
-                    swap(nums, i, index);
-                    break;
+            if(index != -1){
+                for(int i = n-1; i>=index; i--){
+                    if(nums[i] > nums[index]){
+                        swap(nums, i, index);
+                        break;
+                    }
                 }
             }
+        
 
             // Reverse the Suffixes
             reverse(nums, index+1, n-1);
