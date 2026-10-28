@@ -1,6 +1,7 @@
 // Maximum Product SubArray
 
-// This is particularly relevant because a candidate's published Infosys Specialist Programmer interview experience includes a maximum-product subarray question. 
+// This is particularly relevant because a candidate's published Infosys Specialist Programmer interview experience includes 
+// a maximum-product subarray question. 
 
 // Given an array of integers, find the maximum product of any non-empty contiguous subarray.
 
