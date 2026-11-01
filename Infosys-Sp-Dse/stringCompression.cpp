@@ -32,6 +32,7 @@ using namespace std;
 
 int compress(vector<char>& chars){
 
+    // The important thing is that dont forget to add the sentinel character
     chars.push_back('~');
     int n = chars.size();
 
