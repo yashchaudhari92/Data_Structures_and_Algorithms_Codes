@@ -14,6 +14,18 @@
 // Output: "world hello"
 
 
+// Steps: 
+
+// Step 1: Traverse and extract words
+// we need words vector list of type string and empty word string. first we extract the characters in word string, we'll ignore the space here
+// then if the word string is not empty we push that word into the words list.
+
+// Step 2: Reverse the vector of words
+
+// Step 3: Join words with a single space
+// here we need a empty result string the add our words[i]. With single space.
+
+
 // Code :- Using Better Approach
 
 #include<iostream>
