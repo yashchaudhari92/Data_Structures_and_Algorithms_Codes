@@ -25,6 +25,12 @@
 // Input: s = "([)]"
 // Output: false
 
+// Important rules to solve this problem 
+// Condition 1: Identify opening brackets
+// Condition 2: Check whether the stack is empty
+// Condition 3: Check matching brackets
+// Condition 4: Check the remaining brackets
+
 
 // Code :- 
 
