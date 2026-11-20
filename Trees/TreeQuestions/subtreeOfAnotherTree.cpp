@@ -46,7 +46,6 @@ bool isIdentical(Node* root1, Node* root2){
     }
 
     // First always make a left tree call then make a right tree call.
-
     return isIdentical(root1->left, root2->left)
             && isIdentical(root1->right, root2->right);
 }
