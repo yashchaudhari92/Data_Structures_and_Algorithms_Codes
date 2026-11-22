@@ -133,7 +133,7 @@ class Solution{
             int n = nums.size();
             int index = -1;
 
-            // Find the Pivot
+            // Find the Pivot always from right
             for(int i = n-2; i >= 0; i--){
                 if(nums[i] < nums[i+1]){
                     index = i;
@@ -141,7 +141,7 @@ class Solution{
                 }
             }
 
-            // Find next smaller element from suffix and it should be greater than pivot
+            // Find next smaller element from suffix and it should be greater than pivot ( from right)
             if(index != -1){
                 for(int i = n-1; i>=index; i--){
                     if(nums[i] > nums[index]){
