@@ -37,6 +37,16 @@ int main(){
     pairs[3] = make_pair(27, 40);
     pairs[4] = make_pair(50, 90);
 
+    // int n;
+    // cin >> n;
+
+    // vector<pair<int,int>> pairs(n);
+
+    // // Taking pair input
+    // for(int i = 0; i < n; i++){
+    //     cin >> pairs[i].first >> pairs[i].second;
+    // }
+
     MaxLenChaiOfPairs(pairs);
     return 0;
 }
