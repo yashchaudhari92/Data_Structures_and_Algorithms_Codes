@@ -21,7 +21,7 @@ int fractionalKnapsack(vector<int> val, vector<int> wt, int w){
     // Sort the ratios
     sort(ratios.begin(), ratios.end(), compare);
 
-    // main work to Fill the snapsack
+    // main work to Fill the knapsack
     int ans = 0;
     for(int i=0; i<n; i++){
         int idx = ratios[i].second;
