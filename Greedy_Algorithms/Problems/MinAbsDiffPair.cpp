@@ -1,22 +1,41 @@
 // Problem :- Minimum absolute difference Pairs
 
+
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include<cmath>
 using namespace std;
 
 int main(){
-    vector<int> A = { 4, 1, 8, 7};
-    vector<int> B = { 2, 3, 6, 5};
 
+    int n;
+    cin >> n;
+
+    vector<int> A(n), B(n);
+
+    // Input Array A
+    for(int i = 0; i < n; i++){
+        cin >> A[i];
+    }
+
+    // Input Array B
+    for(int i = 0; i < n; i++){
+        cin >> B[i];
+    }
+
+    // Sort both arrays
     sort(A.begin(), A.end());
     sort(B.begin(), B.end());
 
-    int absolute = 0;
-    for(int i = 0; i < A.size(); i++){
+    long long absolute = 0;
+
+    // Calculate minimum absolute difference
+    for(int i = 0; i < n; i++){
         absolute += abs(A[i] - B[i]);
     }
 
-    cout<<"Minimum Absolute Difference: "<<absolute<<endl;
+    cout << absolute << endl;
+
     return 0;
 }
