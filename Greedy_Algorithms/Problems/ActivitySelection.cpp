@@ -1,21 +1,43 @@
+
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 
-int maxActivities(vector<int> start, vector<int> end){
+int maxActivities(vector<int>& start, vector<int>& end){
 
-    // Sort on Basis of EndTime
-    // Select the A0
-    int count = 1;
-    int currEndTime = end[0];
-    cout<<"Selecting A0"<<endl;
+    int n = start.size();
 
-    for(int i = 1; i < start.size(); i++){
-        // NonOverlapping condition
-        if(start[i] >= currEndTime){
-            cout<<"Selecting A"<<i<<endl;
+    // Store {End Time, Start Time, Original Index}
+    vector<pair<pair<int,int>, int>> activities;
+
+    // Create activity pairs
+    for(int i = 0; i < n; i++){
+        activities.push_back({{end[i], start[i]}, i});
+    }
+
+    // Sort activities based on End Time
+    sort(activities.begin(), activities.end());
+
+    int count = 0;
+    int currEndTime = -1;
+
+    // Select activities using Greedy
+    for(int i = 0; i < n; i++){
+
+        int endTime = activities[i].first.first;
+        int startTime = activities[i].first.second;
+        int originalIndex = activities[i].second;
+
+        // Non-overlapping condition
+        if(startTime >= currEndTime){
+
+            cout << "Selecting A" << originalIndex << endl;
+
             count++;
-            currEndTime = end[i];
+
+            // Update current end time
+            currEndTime = endTime;
         }
     }
 
@@ -23,10 +45,12 @@ int maxActivities(vector<int> start, vector<int> end){
 }
 
 int main(){
+
     vector<int> start = {1, 3, 0, 5, 8, 5};
     vector<int> end = {2, 4, 6, 7, 9, 9};
 
-    cout<< maxActivities(start, end) << endl;
+    cout << "Maximum Activities: "
+         << maxActivities(start, end) << endl;
 
     return 0;
 }
